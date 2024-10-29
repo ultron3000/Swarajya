@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>शिवरायांचा छावा</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        video {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+
+<h1>शिवरायांचा छावा</h1>
+
+<video id="my-video" controls preload="auto"></video>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/hls.js/1.1.5/hls.min.js"></script>
+<script>
+    var video = document.getElementById('my-video');
+    var videoSrc = 'https://omlbkw.am.files.1drv.com/y4mn0TrThqe_Lzu7-acH97auQuEH4O5puQlQOK6KQr-vRP9Hg71qF_9HWRQvWWU-ZRv3zKvbDeM239pEcnhtmlgPltxI1do_Dff-roXtWErVtzFtHIBkoD-x9KR8ii2xnl430Dx0JGyA-VP05VpcUojPEYhBWh1qLsPFmWv5JqR5KV2ka9htgWsCrAgoPGMgnDVLDczxdeqC1pJSp_-1fvxEA/Shivrayancha%20Chhava.mkv?authkey=!AKpS67iz2oLakk4';
+
+    if (Hls.isSupported()) {
+        var hls = new Hls();
+        hls.loadSource(videoSrc);
+        hls.attachMedia(video);
+        hls.on(Hls.Events.MANIFEST_PARSED, function() {
+            video.play();
+        });
+    } else if (video.canPlayType('application/vnd.apple.mpegurl')) {
+        video.src = videoSrc;
+        video.addEventListener('loadedmetadata', function() {
+            video.play();
+        });
+    }
+</script>
+
+<a href="index.html"></a>
+
+</body>
+</html>
