@@ -3,29 +3,29 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>स्वराज्य</title>
+    <title>Video Player</title>
+    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet"/>
     <style>
         body {
-            font-family: Arial, sans-serif;
-            text-align: center;
-            margin: 20px;
-        }
-        a {
-            display: block;
-            margin: 10px 0;
-            font-size: 20px;
-            text-decoration: none;
-            color: blue;
-        }
-        a:hover {
-            text-decoration: underline;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f0f0f0;
         }
     </style>
 </head>
 <body>
 
-<h1>स्वराज्य</h1>
+<video id="my-video" class="video-js" controls preload="auto" width="640" height="264" data-setup="{}">
+    <source src="https://omlbkw.am.files.1drv.com/y4mn0TrThqe_Lzu7-acH97auQuEH4O5puQlQOK6KQr-vRP9Hg71qF_9HWRQvWWU-ZRv3zKvbDeM239pEcnhtmlgPltxI1do_Dff-roXtWErVtzFtHIBkoD-x9KR8ii2xnl430Dx0JGyA-VP05VpcUojPEYhBWh1qLsPFmWv5JqR5KV2ka9htgWsCrAgoPGMgnDVLDczxdeqC1pJSp_-1fvxEA/Shivrayancha%20Chhava.mkv?authkey=!AKpS67iz2oLakk4" type="video/x-matroska">
+    Your browser does not support HTML5 video.
+</video>
 
-<a href="movie1.html">शिवरायांचा छावा</a>     
+<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
+<script>
+    var player = videojs('my-video');
+</script>
+
 </body>
 </html>
