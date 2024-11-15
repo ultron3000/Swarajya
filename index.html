@@ -3,25 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Hub</title>
+    <title>Media Page</title>
     <style>
-        /* General reset */
-        * {
+        body {
+            font-family: Arial, sans-serif;
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        body {
-            font-family: Arial, sans-serif;
-            background-color: #f4f4f4;
-            color: #333;
-            line-height: 1.6;
-        }
-
+        /* Header and Logo */
         header {
-            background-color: #ff6f00; /* Orange background */
-            padding: 20px;
+            background-color: orange;
+            padding: 10px 20px;
             text-align: center;
         }
 
@@ -30,69 +24,102 @@
             height: auto;
         }
 
-        h1 {
-            font-size: 2rem;
-            color: white;
-            margin-top: 10px;
-        }
-
+        /* Navigation Menu */
         nav {
+            background-color: #333;
             display: flex;
             justify-content: center;
-            margin-top: 20px;
-            flex-wrap: wrap;
+            padding: 10px;
         }
 
         nav a {
-            background-color: #333;
             color: white;
-            padding: 10px 20px;
-            margin: 5px;
+            padding: 10px;
             text-decoration: none;
-            border-radius: 5px;
-            text-align: center;
+            margin: 0 15px;
+            font-size: 18px;
         }
 
         nav a:hover {
-            background-color: #ff6f00;
+            background-color: #555;
         }
 
-        .subsections {
+        /* Dropdown Menu Styles */
+        .dropdown {
+            position: relative;
+            display: inline-block;
+        }
+
+        .dropdown-content {
             display: none;
-            margin-top: 10px;
-            text-align: left;
+            position: absolute;
+            background-color: #333;
+            min-width: 160px;
+            z-index: 1;
         }
 
-        .subsections a {
-            background-color: #444;
-            padding: 8px 15px;
-            margin: 5px;
-            text-decoration: none;
-            color: white;
+        .dropdown:hover .dropdown-content {
             display: block;
-            border-radius: 5px;
         }
 
-        .subsections a:hover {
-            background-color: #ff6f00;
+        .dropdown-content a {
+            color: white;
+            padding: 12px 16px;
+            text-decoration: none;
+            display: block;
         }
 
+        .dropdown-content a:hover {
+            background-color: #555;
+        }
+
+        /* Main Container */
         .container {
-            max-width: 1200px;
-            margin: 30px auto;
             padding: 20px;
         }
 
-        /* Mobile responsiveness */
-        @media (max-width: 768px) {
+        .section {
+            margin-bottom: 30px;
+        }
+
+        .section h2 {
+            color: #333;
+            text-decoration: underline;
+        }
+
+        /* Subsection Styles */
+        .subsection {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-around;
+        }
+
+        .subsection a {
+            background-color: #eee;
+            border-radius: 5px;
+            margin: 10px;
+            padding: 20px;
+            width: 200px;
+            text-align: center;
+            color: #333;
+            text-decoration: none;
+            font-weight: bold;
+            transition: background-color 0.3s;
+        }
+
+        .subsection a:hover {
+            background-color: #ccc;
+        }
+
+        /* Responsive Design */
+        @media screen and (max-width: 768px) {
             nav {
                 flex-direction: column;
-                align-items: center;
             }
 
-            nav a {
-                width: 100%;
-                margin: 10px 0;
+            .subsection {
+                flex-direction: column;
+                align-items: center;
             }
         }
     </style>
@@ -101,66 +128,78 @@
 
     <header>
         <img src="https://img.freepik.com/premium-vector/satellite-icon-logo-design-illustration_775854-66.jpg" alt="Logo">
-        <h1>Welcome to the Media Hub</h1>
     </header>
 
+    <nav>
+        <a href="#movies">Movies</a>
+        <a href="#tvshows">TV Shows</a>
+        <a href="#animation">Animation</a>
+        <a href="#cartoons">Cartoons</a>
+        <div class="dropdown">
+            <a href="#">Sports</a>
+            <div class="dropdown-content">
+                <a href="#">Football</a>
+                <a href="#">Basketball</a>
+                <a href="#">Tennis</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Live TV</a>
+            <div class="dropdown-content">
+                <a href="#">Live News</a>
+                <a href="#">Live Sports</a>
+                <a href="#">Other Channels</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Radio</a>
+            <div class="dropdown-content">
+                <a href="https://radio.garden/" target="iframe-radio">Radio Garden</a>
+            </div>
+        </div>
+    </nav>
+
     <div class="container">
-        <nav>
-            <a href="javascript:void(0);" onclick="toggleSubsections('movies')">Movies</a>
-            <a href="javascript:void(0);" onclick="toggleSubsections('tv-shows')">TV Shows</a>
-            <a href="javascript:void(0);" onclick="toggleSubsections('animation')">Animation</a>
-            <a href="javascript:void(0);" onclick="toggleSubsections('cartoon')">Cartoon</a>
-            <a href="javascript:void(0);" onclick="toggleSubsections('sports')">Sports</a>
-            <a href="javascript:void(0);" onclick="toggleSubsections('live-tv')">Live TV & Radio</a>
-        </nav>
 
-        <!-- Movies Subsections -->
-        <div id="movies" class="subsections">
-            <a href="marvel.html">Marvel Studios</a>
-            <a href="sony.html">Sony Pictures</a>
-            <a href="warner.html">Warner Bros. Pictures</a>
+        <!-- Movies Section -->
+        <div id="movies" class="section">
+            <h2>Movies</h2>
+            <div class="subsection">
+                <a href="marvel.html">Marvel Studios</a>
+                <a href="sony.html">Sony Pictures</a>
+                <a href="warner.html">Warner Bros. Pictures</a>
+            </div>
         </div>
 
-        <!-- Placeholder for other sections like TV Shows, Animation, etc. -->
-        <div id="tv-shows" class="subsections">
-            <a href="#">Subsection 1</a>
-            <a href="#">Subsection 2</a>
+        <!-- TV Shows Section -->
+        <div id="tvshows" class="section">
+            <h2>TV Shows</h2>
+            <div class="subsection">
+                <a href="#">TV Show 1</a>
+                <a href="#">TV Show 2</a>
+                <a href="#">TV Show 3</a>
+            </div>
         </div>
 
-        <div id="animation" class="subsections">
-            <a href="#">Subsection 1</a>
-            <a href="#">Subsection 2</a>
+        <!-- Animation Section -->
+        <div id="animation" class="section">
+            <h2>Animation</h2>
+            <div class="subsection">
+                <a href="#">Animation 1</a>
+                <a href="#">Animation 2</a>
+            </div>
         </div>
 
-        <div id="cartoon" class="subsections">
-            <a href="#">Subsection 1</a>
-            <a href="#">Subsection 2</a>
+        <!-- Cartoons Section -->
+        <div id="cartoons" class="section">
+            <h2>Cartoons</h2>
+            <div class="subsection">
+                <a href="#">Cartoon 1</a>
+                <a href="#">Cartoon 2</a>
+            </div>
         </div>
 
-        <div id="sports" class="subsections">
-            <a href="#">Subsection 1</a>
-            <a href="#">Subsection 2</a>
-        </div>
-
-        <div id="live-tv" class="subsections">
-            <a href="#">Subsection 1</a>
-            <a href="#">Subsection 2</a>
-        </div>
     </div>
-
-    <script>
-        function toggleSubsections(section) {
-            // Hide all subsections
-            const subsections = document.querySelectorAll('.subsections');
-            subsections.forEach(subsection => subsection.style.display = 'none');
-
-            // Show the clicked section's subsections
-            const sectionElement = document.getElementById(section);
-            if (sectionElement) {
-                sectionElement.style.display = sectionElement.style.display === 'block' ? 'none' : 'block';
-            }
-        }
-    </script>
 
 </body>
 </html>
