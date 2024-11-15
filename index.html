@@ -3,20 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Media Page</title>
+    <title>Media Hub - Movies, TV Shows, Radio & More</title>
     <style>
-        body {
-            font-family: Arial, sans-serif;
+        /* Resetting and Base Styling */
+        * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
-            background-color: #f4f4f4;
+        }
+
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f5f5f5;
+            color: #333;
+            margin: 0;
         }
 
         /* Header and Logo */
         header {
             background-color: orange;
-            padding: 10px 20px;
+            padding: 15px 20px;
             text-align: center;
         }
 
@@ -29,24 +35,36 @@
         nav {
             background-color: #333;
             display: flex;
-            justify-content: center;
-            padding: 10px;
+            justify-content: space-between;
+            align-items: center;
+            padding: 10px 20px;
         }
 
         nav a {
             color: white;
-            padding: 10px 20px;
             text-decoration: none;
+            padding: 10px 20px;
             margin: 0 15px;
             font-size: 18px;
-            display: block;
+            transition: background-color 0.3s ease;
         }
 
         nav a:hover {
             background-color: #555;
+            border-radius: 5px;
         }
 
-        /* Dropdown Menu Styles */
+        .search-box {
+            background-color: #444;
+            border: 1px solid #888;
+            padding: 5px;
+            width: 200px;
+            border-radius: 5px;
+            color: white;
+            background: transparent;
+        }
+
+        /* Dropdown Menu Styling */
         .dropdown {
             position: relative;
             display: inline-block;
@@ -56,7 +74,7 @@
             display: none;
             position: absolute;
             background-color: #333;
-            min-width: 160px;
+            min-width: 180px;
             z-index: 1;
             top: 100%;
         }
@@ -76,19 +94,18 @@
             background-color: #555;
         }
 
-        /* Main Container */
+        /* Main Content Area */
         .container {
-            padding: 20px;
+            padding: 30px;
             text-align: center;
         }
 
         .container h1 {
-            font-size: 30px;
+            font-size: 36px;
             color: #333;
             margin-top: 20px;
         }
 
-        /* Section Title */
         .section {
             margin-top: 40px;
         }
@@ -96,7 +113,7 @@
         .section h2 {
             color: #333;
             text-decoration: underline;
-            font-size: 24px;
+            font-size: 26px;
             margin-bottom: 20px;
         }
 
@@ -104,47 +121,64 @@
         .subsection {
             display: flex;
             justify-content: center;
-            margin-top: 20px;
+            flex-wrap: wrap;
+            gap: 20px;
         }
 
         .subsection a {
-            background-color: #eee;
-            border-radius: 5px;
-            margin: 10px;
+            background-color: #ddd;
+            border-radius: 8px;
             padding: 20px;
-            width: 200px;
+            width: 250px;
             text-align: center;
-            color: #333;
-            text-decoration: none;
+            font-size: 18px;
             font-weight: bold;
-            transition: background-color 0.3s;
+            color: #333;
+            transition: all 0.3s ease;
+            box-shadow: 0px 4px 6px rgba(0, 0, 0, 0.1);
         }
 
         .subsection a:hover {
             background-color: #ccc;
+            transform: scale(1.05);
         }
 
-        /* Responsive Design */
+        /* Responsive Design for Mobile */
         @media screen and (max-width: 768px) {
             nav {
                 flex-direction: column;
-            }
-
-            .subsection {
-                flex-direction: column;
                 align-items: center;
             }
+
+            .search-box {
+                width: 80%;
+                margin-top: 15px;
+            }
+
+            .subsection a {
+                width: 200px;
+            }
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #333;
+            color: white;
+            text-align: center;
+            padding: 15px;
+            margin-top: 30px;
         }
     </style>
 </head>
 <body>
 
+    <!-- Header Section -->
     <header>
         <img src="https://img.freepik.com/premium-vector/satellite-icon-logo-design-illustration_775854-66.jpg" alt="Logo">
     </header>
 
+    <!-- Navigation Menu -->
     <nav>
-        <!-- Movies Dropdown -->
         <div class="dropdown">
             <a href="#">Movies</a>
             <div class="dropdown-content">
@@ -154,7 +188,6 @@
             </div>
         </div>
 
-        <!-- TV Shows Dropdown -->
         <div class="dropdown">
             <a href="#">TV Shows</a>
             <div class="dropdown-content">
@@ -163,7 +196,6 @@
             </div>
         </div>
 
-        <!-- Animation Dropdown -->
         <div class="dropdown">
             <a href="#">Animation</a>
             <div class="dropdown-content">
@@ -172,7 +204,6 @@
             </div>
         </div>
 
-        <!-- Cartoons Dropdown -->
         <div class="dropdown">
             <a href="#">Cartoons</a>
             <div class="dropdown-content">
@@ -181,7 +212,6 @@
             </div>
         </div>
 
-        <!-- Sports Dropdown -->
         <div class="dropdown">
             <a href="#">Sports</a>
             <div class="dropdown-content">
@@ -191,7 +221,6 @@
             </div>
         </div>
 
-        <!-- Live TV Dropdown -->
         <div class="dropdown">
             <a href="#">Live TV</a>
             <div class="dropdown-content">
@@ -201,53 +230,61 @@
             </div>
         </div>
 
-        <!-- Radio Dropdown -->
         <div class="dropdown">
             <a href="#">Radio</a>
             <div class="dropdown-content">
                 <a href="https://radio.garden/" target="iframe-radio">Radio Garden</a>
             </div>
         </div>
+
+        <input class="search-box" type="text" placeholder="Search for movies, shows..." />
     </nav>
 
+    <!-- Main Content -->
     <div class="container">
-        <h1>Welcome to the Media Page</h1>
+        <h1>Welcome to the Media Hub</h1>
 
         <!-- Movies Section -->
         <div class="section">
             <h2>Movies</h2>
             <div class="subsection">
-                <a href="#">Marvel Studios</a>
-                <a href="#">Sony Pictures</a>
-                <a href="#">Warner Bros. Pictures</a>
-            </div>
-        </div>
-
-        <!-- Marvel Studios Subsection -->
-        <div class="section">
-            <h2>Marvel Studios</h2>
-            <div class="subsection">
                 <a href="ironman.html">Iron Man</a>
-            </div>
-        </div>
-
-        <!-- Sony Pictures Subsection -->
-        <div class="section">
-            <h2>Sony Pictures</h2>
-            <div class="subsection">
                 <a href="therundown.html">The Rundown</a>
-            </div>
-        </div>
-
-        <!-- Warner Bros. Pictures Subsection -->
-        <div class="section">
-            <h2>Warner Bros. Pictures</h2>
-            <div class="subsection">
                 <a href="batmanbegins.html">Batman Begins</a>
             </div>
         </div>
 
+        <!-- Subsections (For Now Placeholder) -->
+        <div class="section">
+            <h2>Marvel Studios</h2>
+            <div class="subsection">
+                <a href="ironman.html">Iron Man</a>
+                <a href="avengers.html">The Avengers</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Sony Pictures</h2>
+            <div class="subsection">
+                <a href="therundown.html">The Rundown</a>
+                <a href="spiderman.html">Spider-Man</a>
+            </div>
+        </div>
+
+        <div class="section">
+            <h2>Warner Bros. Pictures</h2>
+            <div class="subsection">
+                <a href="batmanbegins.html">Batman Begins</a>
+                <a href="joker.html">Joker</a>
+            </div>
+        </div>
+
     </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2024 Media Hub - All Rights Reserved</p>
+    </footer>
 
 </body>
 </html>
