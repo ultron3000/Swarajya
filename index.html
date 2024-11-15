@@ -3,29 +3,164 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Video Player</title>
-    <link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet"/>
+    <title>Media Hub</title>
     <style>
+        /* General reset */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
         body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            color: #333;
+            line-height: 1.6;
+        }
+
+        header {
+            background-color: #ff6f00; /* Orange background */
+            padding: 20px;
+            text-align: center;
+        }
+
+        header img {
+            max-width: 150px;
+            height: auto;
+        }
+
+        h1 {
+            font-size: 2rem;
+            color: white;
+            margin-top: 10px;
+        }
+
+        nav {
             display: flex;
             justify-content: center;
-            align-items: center;
-            height: 100vh;
-            background-color: #f0f0f0;
+            margin-top: 20px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            background-color: #333;
+            color: white;
+            padding: 10px 20px;
+            margin: 5px;
+            text-decoration: none;
+            border-radius: 5px;
+            text-align: center;
+        }
+
+        nav a:hover {
+            background-color: #ff6f00;
+        }
+
+        .subsections {
+            display: none;
+            margin-top: 10px;
+            text-align: left;
+        }
+
+        .subsections a {
+            background-color: #444;
+            padding: 8px 15px;
+            margin: 5px;
+            text-decoration: none;
+            color: white;
+            display: block;
+            border-radius: 5px;
+        }
+
+        .subsections a:hover {
+            background-color: #ff6f00;
+        }
+
+        .container {
+            max-width: 1200px;
+            margin: 30px auto;
+            padding: 20px;
+        }
+
+        /* Mobile responsiveness */
+        @media (max-width: 768px) {
+            nav {
+                flex-direction: column;
+                align-items: center;
+            }
+
+            nav a {
+                width: 100%;
+                margin: 10px 0;
+            }
         }
     </style>
 </head>
 <body>
 
-<video id="my-video" class="video-js" controls preload="auto" width="640" height="264">
-    <source src="https://omlbkw.am.files.1drv.com/y4mn0TrThqe_Lzu7-acH97auQuEH4O5puQlQOK6KQr-vRP9Hg71qF_9HWRQvWWU-ZRv3zKvbDeM239pEcnhtmlgPltxI1do_Dff-roXtWErVtzFtHIBkoD-x9KR8ii2xnl430Dx0JGyA-VP05VpcUojPEYhBWh1qLsPFmWv5JqR5KV2ka9htgWsCrAgoPGMgnDVLDczxdeqC1pJSp_-1fvxEA/Shivrayancha%20Chhava.mkv?authkey=!AKpS67iz2oLakk4" type="video/x-matroska">
-    Your browser does not support HTML5 video.
-</video>
+    <header>
+        <img src="https://img.freepik.com/premium-vector/satellite-icon-logo-design-illustration_775854-66.jpg" alt="Logo">
+        <h1>Welcome to the Media Hub</h1>
+    </header>
 
-<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>
-<script>
-    var player = videojs('my-video');
-</script>
+    <div class="container">
+        <nav>
+            <a href="javascript:void(0);" onclick="toggleSubsections('movies')">Movies</a>
+            <a href="javascript:void(0);" onclick="toggleSubsections('tv-shows')">TV Shows</a>
+            <a href="javascript:void(0);" onclick="toggleSubsections('animation')">Animation</a>
+            <a href="javascript:void(0);" onclick="toggleSubsections('cartoon')">Cartoon</a>
+            <a href="javascript:void(0);" onclick="toggleSubsections('sports')">Sports</a>
+            <a href="javascript:void(0);" onclick="toggleSubsections('live-tv')">Live TV & Radio</a>
+        </nav>
+
+        <!-- Movies Subsections -->
+        <div id="movies" class="subsections">
+            <a href="marvel.html">Marvel Studios</a>
+            <a href="sony.html">Sony Pictures</a>
+            <a href="warner.html">Warner Bros. Pictures</a>
+        </div>
+
+        <!-- Placeholder for other sections like TV Shows, Animation, etc. -->
+        <div id="tv-shows" class="subsections">
+            <a href="#">Subsection 1</a>
+            <a href="#">Subsection 2</a>
+        </div>
+
+        <div id="animation" class="subsections">
+            <a href="#">Subsection 1</a>
+            <a href="#">Subsection 2</a>
+        </div>
+
+        <div id="cartoon" class="subsections">
+            <a href="#">Subsection 1</a>
+            <a href="#">Subsection 2</a>
+        </div>
+
+        <div id="sports" class="subsections">
+            <a href="#">Subsection 1</a>
+            <a href="#">Subsection 2</a>
+        </div>
+
+        <div id="live-tv" class="subsections">
+            <a href="#">Subsection 1</a>
+            <a href="#">Subsection 2</a>
+        </div>
+    </div>
+
+    <script>
+        function toggleSubsections(section) {
+            // Hide all subsections
+            const subsections = document.querySelectorAll('.subsections');
+            subsections.forEach(subsection => subsection.style.display = 'none');
+
+            // Show the clicked section's subsections
+            const sectionElement = document.getElementById(section);
+            if (sectionElement) {
+                sectionElement.style.display = sectionElement.style.display === 'block' ? 'none' : 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
