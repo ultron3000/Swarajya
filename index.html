@@ -10,6 +10,7 @@
             margin: 0;
             padding: 0;
             box-sizing: border-box;
+            background-color: #f4f4f4;
         }
 
         /* Header and Logo */
@@ -34,7 +35,7 @@
 
         nav a {
             color: white;
-            padding: 10px;
+            padding: 10px 20px;
             text-decoration: none;
             margin: 0 15px;
             font-size: 18px;
@@ -56,6 +57,7 @@
             background-color: #333;
             min-width: 160px;
             z-index: 1;
+            top: 100%;
         }
 
         .dropdown:hover .dropdown-content {
@@ -111,6 +113,22 @@
             background-color: #ccc;
         }
 
+        /* Back Link */
+        .back-link {
+            text-align: center;
+            margin: 20px;
+        }
+
+        .back-link a {
+            font-size: 18px;
+            color: #333;
+            text-decoration: none;
+        }
+
+        .back-link a:hover {
+            color: orange;
+        }
+
         /* Responsive Design */
         @media screen and (max-width: 768px) {
             nav {
@@ -131,10 +149,35 @@
     </header>
 
     <nav>
-        <a href="#movies">Movies</a>
-        <a href="#tvshows">TV Shows</a>
-        <a href="#animation">Animation</a>
-        <a href="#cartoons">Cartoons</a>
+        <div class="dropdown">
+            <a href="#">Movies</a>
+            <div class="dropdown-content">
+                <a href="marvel.html">Marvel Studios</a>
+                <a href="sony.html">Sony Pictures</a>
+                <a href="warner.html">Warner Bros. Pictures</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">TV Shows</a>
+            <div class="dropdown-content">
+                <a href="#">TV Show 1</a>
+                <a href="#">TV Show 2</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Animation</a>
+            <div class="dropdown-content">
+                <a href="#">Animation 1</a>
+                <a href="#">Animation 2</a>
+            </div>
+        </div>
+        <div class="dropdown">
+            <a href="#">Cartoons</a>
+            <div class="dropdown-content">
+                <a href="#">Cartoon 1</a>
+                <a href="#">Cartoon 2</a>
+            </div>
+        </div>
         <div class="dropdown">
             <a href="#">Sports</a>
             <div class="dropdown-content">
@@ -160,7 +203,6 @@
     </nav>
 
     <div class="container">
-
         <!-- Movies Section -->
         <div id="movies" class="section">
             <h2>Movies</h2>
@@ -177,7 +219,6 @@
             <div class="subsection">
                 <a href="#">TV Show 1</a>
                 <a href="#">TV Show 2</a>
-                <a href="#">TV Show 3</a>
             </div>
         </div>
 
@@ -198,7 +239,6 @@
                 <a href="#">Cartoon 2</a>
             </div>
         </div>
-
     </div>
 
 </body>
