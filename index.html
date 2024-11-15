@@ -78,22 +78,32 @@
         /* Main Container */
         .container {
             padding: 20px;
+            text-align: center;
         }
 
+        .container h1 {
+            font-size: 30px;
+            color: #333;
+            margin-top: 20px;
+        }
+
+        /* Section Title */
         .section {
-            margin-bottom: 30px;
+            margin-top: 40px;
         }
 
         .section h2 {
             color: #333;
             text-decoration: underline;
+            font-size: 24px;
+            margin-bottom: 20px;
         }
 
         /* Subsection Styles */
         .subsection {
             display: flex;
-            flex-wrap: wrap;
-            justify-content: space-around;
+            justify-content: center;
+            margin-top: 20px;
         }
 
         .subsection a {
@@ -111,22 +121,6 @@
 
         .subsection a:hover {
             background-color: #ccc;
-        }
-
-        /* Back Link */
-        .back-link {
-            text-align: center;
-            margin: 20px;
-        }
-
-        .back-link a {
-            font-size: 18px;
-            color: #333;
-            text-decoration: none;
-        }
-
-        .back-link a:hover {
-            color: orange;
         }
 
         /* Responsive Design */
@@ -149,14 +143,17 @@
     </header>
 
     <nav>
+        <!-- Movies Dropdown -->
         <div class="dropdown">
             <a href="#">Movies</a>
             <div class="dropdown-content">
-                <a href="marvel.html">Marvel Studios</a>
-                <a href="sony.html">Sony Pictures</a>
-                <a href="warner.html">Warner Bros. Pictures</a>
+                <a href="#">Marvel Studios</a>
+                <a href="#">Sony Pictures</a>
+                <a href="#">Warner Bros. Pictures</a>
             </div>
         </div>
+
+        <!-- TV Shows Dropdown -->
         <div class="dropdown">
             <a href="#">TV Shows</a>
             <div class="dropdown-content">
@@ -164,6 +161,8 @@
                 <a href="#">TV Show 2</a>
             </div>
         </div>
+
+        <!-- Animation Dropdown -->
         <div class="dropdown">
             <a href="#">Animation</a>
             <div class="dropdown-content">
@@ -171,6 +170,8 @@
                 <a href="#">Animation 2</a>
             </div>
         </div>
+
+        <!-- Cartoons Dropdown -->
         <div class="dropdown">
             <a href="#">Cartoons</a>
             <div class="dropdown-content">
@@ -178,6 +179,8 @@
                 <a href="#">Cartoon 2</a>
             </div>
         </div>
+
+        <!-- Sports Dropdown -->
         <div class="dropdown">
             <a href="#">Sports</a>
             <div class="dropdown-content">
@@ -186,6 +189,8 @@
                 <a href="#">Tennis</a>
             </div>
         </div>
+
+        <!-- Live TV Dropdown -->
         <div class="dropdown">
             <a href="#">Live TV</a>
             <div class="dropdown-content">
@@ -194,6 +199,8 @@
                 <a href="#">Other Channels</a>
             </div>
         </div>
+
+        <!-- Radio Dropdown -->
         <div class="dropdown">
             <a href="#">Radio</a>
             <div class="dropdown-content">
@@ -203,42 +210,42 @@
     </nav>
 
     <div class="container">
+        <h1>Welcome to the Media Page</h1>
+
         <!-- Movies Section -->
-        <div id="movies" class="section">
+        <div class="section">
             <h2>Movies</h2>
             <div class="subsection">
-                <a href="marvel.html">Marvel Studios</a>
-                <a href="sony.html">Sony Pictures</a>
-                <a href="warner.html">Warner Bros. Pictures</a>
+                <a href="#">Marvel Studios</a>
+                <a href="#">Sony Pictures</a>
+                <a href="#">Warner Bros. Pictures</a>
             </div>
         </div>
 
-        <!-- TV Shows Section -->
-        <div id="tvshows" class="section">
-            <h2>TV Shows</h2>
+        <!-- Marvel Studios Subsection -->
+        <div class="section">
+            <h2>Marvel Studios</h2>
             <div class="subsection">
-                <a href="#">TV Show 1</a>
-                <a href="#">TV Show 2</a>
+                <a href="ironman.html">Iron Man</a>
             </div>
         </div>
 
-        <!-- Animation Section -->
-        <div id="animation" class="section">
-            <h2>Animation</h2>
+        <!-- Sony Pictures Subsection -->
+        <div class="section">
+            <h2>Sony Pictures</h2>
             <div class="subsection">
-                <a href="#">Animation 1</a>
-                <a href="#">Animation 2</a>
+                <a href="therundown.html">The Rundown</a>
             </div>
         </div>
 
-        <!-- Cartoons Section -->
-        <div id="cartoons" class="section">
-            <h2>Cartoons</h2>
+        <!-- Warner Bros. Pictures Subsection -->
+        <div class="section">
+            <h2>Warner Bros. Pictures</h2>
             <div class="subsection">
-                <a href="#">Cartoon 1</a>
-                <a href="#">Cartoon 2</a>
+                <a href="batmanbegins.html">Batman Begins</a>
             </div>
         </div>
+
     </div>
 
 </body>
