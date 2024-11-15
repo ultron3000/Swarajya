@@ -168,6 +168,12 @@
             padding: 15px;
             margin-top: 30px;
         }
+
+        /* Hide Subsection content on page load */
+        .subsection-container {
+            display: none;
+        }
+
     </style>
 </head>
 <body>
@@ -180,61 +186,58 @@
     <!-- Navigation Menu -->
     <nav>
         <div class="dropdown">
-            <a href="#">Movies</a>
+            <a href="javascript:void(0)">Movies</a>
             <div class="dropdown-content">
-                <a href="#">Marvel Studios</a>
-                <a href="#">Sony Pictures</a>
-                <a href="#">Warner Bros. Pictures</a>
+                <a href="javascript:void(0)" onclick="showSubsection('marvel')">Marvel Studios</a>
+                <a href="javascript:void(0)" onclick="showSubsection('sony')">Sony Pictures</a>
+                <a href="javascript:void(0)" onclick="showSubsection('warner')">Warner Bros. Pictures</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#">TV Shows</a>
+            <a href="javascript:void(0)">TV Shows</a>
             <div class="dropdown-content">
-                <a href="#">TV Show 1</a>
-                <a href="#">TV Show 2</a>
+                <a href="javascript:void(0)">TV Show 1</a>
+                <a href="javascript:void(0)">TV Show 2</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#">Animation</a>
+            <a href="javascript:void(0)">Animation</a>
             <div class="dropdown-content">
-                <a href="#">Animation 1</a>
-                <a href="#">Animation 2</a>
+                <a href="javascript:void(0)">Animation 1</a>
+                <a href="javascript:void(0)">Animation 2</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#">Cartoons</a>
+            <a href="javascript:void(0)">Cartoons</a>
             <div class="dropdown-content">
-                <a href="#">Cartoon 1</a>
-                <a href="#">Cartoon 2</a>
+                <a href="javascript:void(0)">Cartoon 1</a>
+                <a href="javascript:void(0)">Cartoon 2</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#">Sports</a>
+            <a href="javascript:void(0)">Sports</a>
             <div class="dropdown-content">
-                <a href="#">Football</a>
-                <a href="#">Basketball</a>
-                <a href="#">Tennis</a>
+                <a href="javascript:void(0)">Football</a>
+                <a href="javascript:void(0)">Basketball</a>
+                <a href="javascript:void(0)">Tennis</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#">Live TV</a>
+            <a href="javascript:void(0)">Live TV</a>
             <div class="dropdown-content">
-                <a href="#">Live News</a>
-                <a href="#">Live Sports</a>
-                <a href="#">Other Channels</a>
+                <a href="javascript:void(0)">Live News</a>
+                <a href="javascript:void(0)">Live Sports</a>
+                <a href="javascript:void(0)">Other Channels</a>
             </div>
         </div>
 
         <div class="dropdown">
-            <a href="#">Radio</a>
-            <div class="dropdown-content">
-                <a href="https://radio.garden/" target="iframe-radio">Radio Garden</a>
-            </div>
+            <a href="https://radio.garden/" target="iframe-radio">Radio</a>
         </div>
 
         <input class="search-box" type="text" placeholder="Search for movies, shows..." />
@@ -245,46 +248,61 @@
         <h1>Welcome to the Media Hub</h1>
 
         <!-- Movies Section -->
-        <div class="section">
+        <div class="section" id="movies-section">
             <h2>Movies</h2>
             <div class="subsection">
-                <a href="ironman.html">Iron Man</a>
-                <a href="therundown.html">The Rundown</a>
-                <a href="batmanbegins.html">Batman Begins</a>
+                <a href="javascript:void(0)" onclick="showSubsection('marvel')">Marvel Studios</a>
+                <a href="javascript:void(0)" onclick="showSubsection('sony')">Sony Pictures</a>
+                <a href="javascript:void(0)" onclick="showSubsection('warner')">Warner Bros. Pictures</a>
             </div>
         </div>
 
-        <!-- Subsections (For Now Placeholder) -->
-        <div class="section">
+        <!-- Marvel Studios Subsection -->
+        <div class="section subsection-container" id="marvel">
             <h2>Marvel Studios</h2>
             <div class="subsection">
                 <a href="ironman.html">Iron Man</a>
-                <a href="avengers.html">The Avengers</a>
             </div>
         </div>
 
-        <div class="section">
+        <!-- Sony Pictures Subsection -->
+        <div class="section subsection-container" id="sony">
             <h2>Sony Pictures</h2>
             <div class="subsection">
                 <a href="therundown.html">The Rundown</a>
-                <a href="spiderman.html">Spider-Man</a>
             </div>
         </div>
 
-        <div class="section">
+        <!-- Warner Bros. Pictures Subsection -->
+        <div class="section subsection-container" id="warner">
             <h2>Warner Bros. Pictures</h2>
             <div class="subsection">
                 <a href="batmanbegins.html">Batman Begins</a>
-                <a href="joker.html">Joker</a>
             </div>
         </div>
-
     </div>
 
     <!-- Footer Section -->
     <footer>
         <p>&copy; 2024 Media Hub - All Rights Reserved</p>
     </footer>
+
+    <!-- Script to toggle visibility of subsections -->
+    <script>
+        function showSubsection(sectionId) {
+            // Hide all subsections first
+            var subsections = document.querySelectorAll('.subsection-container');
+            subsections.forEach(function(subsection) {
+                subsection.style.display = 'none';
+            });
+
+            // Show the selected subsection
+            var selectedSubsection = document.getElementById(sectionId);
+            if (selectedSubsection) {
+                selectedSubsection.style.display = 'block';
+            }
+        }
+    </script>
 
 </body>
 </html>
